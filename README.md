@@ -13,4 +13,8 @@ Important : This apps implement _django framework_. So you must install django f
 
 * _Home Page: Input sum of clusters (between 3 and 6)_
 
+![1 home page](https://user-images.githubusercontent.com/16315641/36252059-054f85c2-1276-11e8-8f9b-99abb97738eb.PNG)
+
 * _Result Page: Clustered Image_
+
+![2 result page](https://user-images.githubusercontent.com/16315641/36252062-061ae758-1276-11e8-8b9a-c92bd762dec7.PNG)
