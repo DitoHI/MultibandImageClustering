@@ -1,5 +1,7 @@
 # MultibandImageClustering
 
+![mic_font](https://user-images.githubusercontent.com/16315641/36252189-4f3cf390-1276-11e8-919d-0a1f67705d8f.png)
+
 ### Web Application – Classify the image from multiple spectral of satellite images into new spectral color image
 
 Important : This apps implement _django framework_. So you must install django first
