@@ -1,0 +1,70 @@
+{% extends 'multiband_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    img {
+        border-radius: 5px 5px 0 0;
+        display: block;
+        margin: auto;
+    }
+    .container-text {
+        padding: 2px 16px;
+    }
+</style>
+
+{% if title %}
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1>Multiband Image Clustering</h1>
+    <p>{{ title }}</p>
+</div>
+{% endif %}
+
+{% if message %}
+<div class="alert alert-info alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Look below! </strong> {{ message }} <strong>{{ elapsed }}</strong> seconds
+</div>
+{% endif %}
+
+<div class="row" style="margin-top: 30px;">
+    {% for img in url %}
+    <div class="col-xs-2">
+        <div class="card">
+            <a href="{{ img }}" target="_blank"><img src="{{ img }}" class="img-responsive"/></a>
+            <div class="container-text">
+            <h4><b>Gambar {{ forloop.counter}}</b></h4>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+<div class="row">
+    <div class="col-xs-6 well">
+        {% crispy form %}
+    </div>
+    {% if message %}
+    <div class="col-xs-6">
+        <div class="well">
+            <div class="card-body">
+              <h4 class="card-title">Result of Clustering</h4>
+              <p class="card-text">Method: <strong>K-Means with Genetic Algorithm</strong> with <strong>{{ cluster }} clusters</strong></p>
+              <a href="{{ result }}" class="btn btn-primary" target="_blank">See Full Picture</a>
+            </div>
+            <img class="card-img-bottom img-responsive" src="{{ result }}" alt="Card image" style="width: 100px">
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
